@@ -1,0 +1,24 @@
+Installation:
+- Install Stracker's dll https://www.nexusmods.com/monsterhunterworld/mods/1982/
+- Put nativePC folder from archive into game directory 
+- Rename file in nativePC/common/facility to only "shopList.slt" (without number) according to which item you need. Pay attention if you have not enabled file extensions in Windows file explorer. If you have no idea what you're doing, try renaming to shopList (without .slt) and shopList.slt. One of them will work.
+
+It's not possible to put more items in one file, dont ask. If you don't want to run risk of a ban, don't use mods, don't cheat and play vanilla.
+
+Mod should be compatible with future updates.
+
+Use ID from this site for quick reference: https://mhw.poedb.tw/eng/rawitems
+
+Example: You want Ebony Odogaron Lash. Look at site. ID is 1203. You rename shopList_04.slt to shopList.slt. Load game.
+
+00: Potion - Aqua Sac (1 - 255)
+01: Torrent Sac - Vaal Hazak Talon (256 - 510)
+02: Vaal Hazak Wing - Critical Jewel 2 (511 - 765)
+03: Tenderized Jewel 2 - Unavailable (766 - 1020)
+04: Unavailable - Acidic Glavenus Spineshell (1021 - 1275)
+05: Acidic Glavenus Tailedge - Simple Urn (1276 - 1530)
+06: Grimalkyne Doll - Protectors: Dried Goldenfish (1531 - 1785)
+07: Troupers: Horned Urchin - Friendship/Physique Jewel 4 (1786 - 2040)
+08: Satiated/Physique Jewel 4 - Unavailable (2041 - 2295)
+09: Unavailable - Unavailable (2296 - 2550)
+10: Unavailable - Unavailable (2251 - 2774)

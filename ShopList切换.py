@@ -4,7 +4,7 @@ from tkinter import filedialog
 import configparser
 import os
 
-path_current=os.getcwd()+'\\shoplist_select\\Config.ini'
+path_current=os.getcwd()+'\\Config.ini'
 
 Config=configparser.ConfigParser()#读取Config.ini文件内容，读取path内容
 Config.read(path_current)
@@ -49,7 +49,17 @@ def select_shoplist():       #radiobutton选择函数
     prompt.config(text='You select '+var_filename.get())
 
 #radiobutton数据
-MODES=[('00','00'),('01','01'),('02','02'),('03','03'),('04','04'),('05','05'),('06','06'),('07','07'),('08','08'),('09','09'),('10','10')]
+MODES=[('00: Potion - Aqua Sac (1 - 255)','00'),
+       ('01: Torrent Sac - Vaal Hazak Talon (256 - 510)','01'),
+       ('02: Vaal Hazak Wing - Critical Jewel 2 (511 - 765)','02'),
+       ('03: Tenderized Jewel 2 - Unavailable (766 - 1020)','03'),
+       ('04: Unavailable - Acidic Glavenus Spineshell (1021 - 1275)','04'),
+       ('05: Acidic Glavenus Tailedge - Simple Urn (1276 - 1530)','05'),
+       ('06: Grimalkyne Doll - Protectors: Dried Goldenfish (1531 - 1785)','06'),
+       ('07: Troupers: Horned Urchin - Friendship/Physique Jewel 4 (1786 - 2040)','07'),
+       ('08: Satiated/Physique Jewel 4 - Unavailable (2041 - 2295)','08'),
+       ('09: Unavailable - Unavailable (2296 - 2550)','09'),
+       ('10: Unavailable - Unavailable (2251 - 2774)','10')]
 
 for test,value in MODES:#批量创建radiobutton
     r=tk.Radiobutton(frame_radiobutton,text=test,font=('Arial',14),variable=var_filename,value=value,command=select_shoplist)
