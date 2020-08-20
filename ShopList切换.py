@@ -9,7 +9,6 @@ path_current=os.getcwd()+'\\Config.ini'
 Config=configparser.ConfigParser()#读取Config.ini文件内容，读取path内容
 Config.read(path_current)
 path=Config.get('path','current')
-print(path)
 
 window=tk.Tk()#创建window窗体
 window.title('ShopList select')
