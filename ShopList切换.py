@@ -9,6 +9,7 @@ path_current=os.getcwd()+'\\Config.ini'
 Config=configparser.ConfigParser()#读取Config.ini文件内容，读取path内容
 Config.read(path_current)
 path=Config.get('path','current')
+print(path)
 
 window=tk.Tk()#创建window窗体
 window.title('ShopList select')
@@ -26,11 +27,12 @@ def button_path():      #打开目录选择器，更新目录，写入ini文件
     print(tmp)
     path=filedialog.askdirectory()
     print(path)
-    if path!=None:
-        text_path.delete(0.0,'end')
-        text_path.insert('end',path)
-        Config.set('path','current',path)
-        Config.write(open(path_current,'w+'))
+    if path=='':     #知识点：当文件选择器未选时，返回值为‘’
+        return 0
+    text_path.delete(0.0,'end')
+    text_path.insert('end',path)
+    Config.set('path','current',path)
+    Config.write(open(path_current,'w+'))
 
 text_path=tk.Text(frame_select_path,font=('Arial,12'),height=1)#路径文本显示
 text_path.pack(side='left')
