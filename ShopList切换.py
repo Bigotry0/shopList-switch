@@ -69,7 +69,7 @@ for test,value in MODES:#批量创建radiobutton
     r=tk.Radiobutton(frame_radiobutton,text=test,font=('Arial',14),variable=var_filename,value=value,command=select_shoplist)
     r.pack()
 
-def button_yes():         #确定按钮点击函数
+def button_yes():          #确定按钮点击函数
     #文件复制
     shoplist_path_now=shoplist_path+'\\'+var_filename.get()
     copyfile(shoplist_path_now,path+'\\shopList.slt')
