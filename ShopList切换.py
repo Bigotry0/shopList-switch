@@ -33,9 +33,7 @@ def button_path():      #打开目录选择器，更新目录，写入ini文件
     global path
     global init
     tmp=path
-    print(tmp)
     path=filedialog.askdirectory()
-    print(path)
     if path=='':     #知识点：当文件选择器未选时，返回值为‘’
         return 0
     else:
