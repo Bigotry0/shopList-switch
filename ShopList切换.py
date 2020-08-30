@@ -16,8 +16,9 @@ shoplist=Config.get('path','shoplist')
 init=Config.getboolean('path','init')
 
 window=tk.Tk()#创建window窗体
-window.title('ShopList select')
+window.title('ShopList切换器')
 window.geometry('720x600')
+window.iconbitmap('.\icon.ico')
 window.minsize(720,600)
 
 prompt=tk.Label(window,text='当前选择的ShopList为:'+shoplist,font=('Arial',16),width=30,height=1)#Label提升框
@@ -30,6 +31,7 @@ frame_select_path.pack(side='bottom')
 
 def button_path():      #打开目录选择器，更新目录，写入ini文件
     global path
+    global init
     tmp=path
     print(tmp)
     path=filedialog.askdirectory()
@@ -43,9 +45,10 @@ def button_path():      #打开目录选择器，更新目录，写入ini文件
                 tk.messagebox.showwarning(title='路径错误',
                                           message='该路径不是商店mod的存放路径,请重新选择,如果common目录中没有facility目录，请手动创建并重新选择')
                 return 0
-            else:  #TODO:
+            else:
                 tk.messagebox.showwarning(title='路径错误',
                                           message='该路径不是商店mod的存放路径,已经设置好了就不要乱改啦,如果要更换新的游戏路径请选择正确的路径哦,求求各位大侠们不要乱玩我啦')
+                return 0
     text_path.delete(0.0,'end')
     text_path.insert('end',path)
     Config.set('path','current',path)
